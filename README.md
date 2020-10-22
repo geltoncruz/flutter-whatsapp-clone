@@ -11,3 +11,9 @@ Celui-ci sera exécuté dans l'androïde par des appareils simulés d'ide.
 
 Pour obtenir de l'aide pour démarrer avec Flutter, consultez la doc
 [enligne documentation](https://flutter.dev/docs).
+
+
+## Structure du projet
+
+![Structure de projeto](./lib/assests/images/diagram.png)
+
