@@ -15,61 +15,47 @@ class MyApp extends StatelessWidget {
         primaryColor: Color(0XFF075E54),
         accentColor: Color(0XFF25D366),
       ),
-      home: MyHomePage(title: 'Whatsapp'),
+      home: WhatsAppHomePage('WhatsApp'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
+class WhatsAppHomePage extends StatelessWidget {
+  String title;
 
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+  WhatsAppHomePage(title) {
+    this.title = title;
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(this.title),
         actions: [
-          Icon(
-            Icons.search,
+          IconButton(
+            icon: Icon(
+              Icons.search,
+              color: Color(0XFFFFFFFF),
+            ),
+            onPressed: () => {
+              print('Search tapped'),
+            },
           ),
-          Icon(
-            Icons.more_vert,
+          IconButton(
+            icon: Icon(
+              Icons.more_vert,
+              color: Color(0XFFFFFFFF),
+            ),
+            onPressed: () => {
+              print('More option tapped'),
+            },
           )
         ],
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
+        child: Text('Whatsapp'),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
