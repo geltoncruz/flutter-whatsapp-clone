@@ -4,8 +4,13 @@ class AppBarAndTabs extends StatelessWidget {
   String title = "Whatsapp";
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: DefaultTabController(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor: Color(0XFF075E54),
+        accentColor: Color(0XFF25D366),
+      ),
+      home: DefaultTabController(
         length: 3,
         child: Scaffold(
           appBar: AppBar(
@@ -44,6 +49,11 @@ class AppBarAndTabs extends StatelessWidget {
               ],
             ),
           ),
+          body: TabBarView(children: [
+            Text('Menssagens'),
+            Text('Status'),
+            Text('Chamadas'),
+          ]),
         ),
       ),
     );
