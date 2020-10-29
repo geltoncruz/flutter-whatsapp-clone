@@ -11,7 +11,7 @@ class AppBarAndTabs extends StatelessWidget {
         accentColor: Color(0XFF25D366),
       ),
       home: DefaultTabController(
-        length: 3,
+        length: 4,
         child: Scaffold(
           appBar: AppBar(
             title: Text(this.title),
@@ -38,22 +38,29 @@ class AppBarAndTabs extends StatelessWidget {
             bottom: TabBar(
               tabs: [
                 Tab(
-                  child: Text('Mensages'),
+                  child: Icon(Icons.camera_alt),
+                ),
+                Tab(
+                  child: Text('Chat'),
                 ),
                 Tab(
                   child: Text('Status'),
                 ),
                 Tab(
-                  child: Text('Chamadas'),
+                  child: Text('Call'),
                 ),
               ],
             ),
           ),
-          body: TabBarView(children: [
-            Text('Menssagens'),
-            Text('Status'),
-            Text('Chamadas'),
-          ]),
+          body: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TabBarView(children: [
+              Text('Camera'),
+              Text('Menssagens'),
+              Text('Status'),
+              Text('Chamadas'),
+            ]),
+          ),
         ),
       ),
     );
