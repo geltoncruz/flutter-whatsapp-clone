@@ -3,6 +3,12 @@ import 'package:whatsapp/pages/whatsAppCamera.dart';
 
 class AppBarAndTabs extends StatelessWidget {
   String title = "Whatsapp";
+  List<String> itensMenu = [
+    "chat",
+    "statu",
+    "call",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -53,18 +59,28 @@ class AppBarAndTabs extends StatelessWidget {
               )
             ],
             bottom: TabBar(
+              isScrollable: false,
+              indicatorColor: Colors.white,
               tabs: [
-                Tab(
-                  child: Icon(Icons.camera_alt),
+                Container(
+                  child: Tab(
+                    child: Icon(Icons.camera_alt),
+                  ),
                 ),
-                Tab(
-                  child: Text('Chat'),
+                Container(
+                  child: Tab(
+                    child: Text('Chat'.toUpperCase()),
+                  ),
                 ),
-                Tab(
-                  child: Text('Status'),
+                Container(
+                  child: Tab(
+                    child: Text('Status'.toUpperCase()),
+                  ),
                 ),
-                Tab(
-                  child: Text('Call'),
+                Container(
+                  child: Tab(
+                    child: Text('Call'.toUpperCase()),
+                  ),
                 ),
               ],
             ),
@@ -73,7 +89,55 @@ class AppBarAndTabs extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: TabBarView(children: [
               Text('Camera'),
-              Text('Menssagens'),
+              ListView(
+                children: [
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [Icon(Icons.textsms)],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [Icon(Icons.textsms)],
+                        ),
+                      ),
+                    ],
+                  ),
+                  Text('#'),
+                  Text('c'),
+                  Text('!'),
+                  Text('#'),
+                  Text('c'),
+                  Text('!'),
+                  Text('#'),
+                  Text('c'),
+                  Text('!'),
+                  Text('#'),
+                  Text('c'),
+                  Text('c'),
+                  Text('c'),
+                  Text('c'),
+                  Text('c'),
+                  Text('c'),
+                  Text('c'),
+                  Text('c'),
+                  Text('c'),
+                  Text('#'),
+                  Text('c'),
+                  Text('c'),
+                  Text('c'),
+                  Text('c'),
+                  Text('d'),
+                  Text('e'),
+                  Text('f'),
+                  Text('g'),
+                  Text('h'),
+                ],
+              ),
               Text('Status'),
               Text('Chamadas'),
             ]),
